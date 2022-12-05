@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Zomato Resturant</title>
+</head>
+<body>
+    <img src="https://www.bluemoonbeachgrill.com/wp-content/uploads/2015/07/zomato-logo.png",
+         alt="zomato logo",width="50",height="50",style="float:left">
+
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/59/MDS_logo.svg",
+         alt="MDS logo",height="50",width="50",style="float:right">
+    <div class="logo">
+        <h1> MAHARANA DATA SCIENCE </h1>
+    </div>
+
+    <style>
+        body {
+                background-image: url("https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                background-position: 100%;
+                background-size: cover;
+            }
+    </style>
+
+
+    <div class="login">
+        <h1> Predict Rating for Zomato Restaurant</h1>
+        <form action="{{url_for('predict')}}"method="post">
+            <input type="text" name="online order" placeholder="Online Order" required="required" />
+            <input type="text" name="book table" placeholder="Book Table" required="required" />
+            <input type="text" name="votes" placeholder="Votes" required="required">
+            <input type="text" name="Restaurant Type" placeholder="Restaurant Type" required="required" />
+            <input type="text" name="Cuisines" placeholder="Cuisines" required="required" />
+            <input type="text" name="Cost" placeholder="Cost" required="required" />
+            <input type="text" name="Menu Item" placeholder="Menu Item" required="required" />
+            <input type="text" name="type" placeholder="Type" required="required" />
+            <input type="text" name="city" placeholder="City" required="required" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <br>
+        <br>
+        <h1>{{ prediction_text }}</h1>
+    </div>
+
+
+</body>
+</html>
